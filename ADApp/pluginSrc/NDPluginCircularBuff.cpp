@@ -190,6 +190,7 @@ void NDPluginCircularBuff::processCallbacks(NDArray *pArray)
             setStringParam(NDCircBuffStatus,
                 preCount ? "Buffer filling" : "Dropping frames");
           } else {
+            setIntegerParam(NDCircBuffSoftTrigger, 0);
             setIntegerParam(NDCircBuffTriggered, 0);
             setIntegerParam(NDCircBuffControl, 0);
             setStringParam(NDCircBuffStatus, "Acquisition Completed");
