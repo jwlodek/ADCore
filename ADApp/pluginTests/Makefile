@@ -48,6 +48,9 @@ ifeq ($(WITH_BOOST),YES)
   PROD_IOC_WIN32 += plugin-test
   plugin-test_SRCS += plugin-test.cpp
   plugin-test_SRCS += test_NDPluginCircularBuff.cpp
+  ifeq ($(WITH_PLUGIN_INVENTORY),YES)
+    plugin-test_SRCS += test_NDPluginInventory.cpp
+  endif
   ifeq ($(WITH_HDF5),YES)
     plugin-test_SRCS += test_NDFileHDF5.cpp
     plugin-test_SRCS += test_NDFileHDF5AttributeDataset.cpp
