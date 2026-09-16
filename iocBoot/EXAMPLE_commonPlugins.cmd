@@ -175,8 +175,8 @@ dbLoadRecords("$(AUTOSAVE)/db/configMenu.db", "P=$(PREFIX), CONFIG=ADAutoSave")
 
 # Create the process-wide plugin inventory, advertised as a single PVA channel
 # ($(PREFIX)Plugins_RBV) listing every plugin keyed by plugin type.
-NDPluginInventoryConfigure("PluginInventory", "$(PREFIX)Plugins_RBV")
-dbLoadRecords("NDPluginInventory.template", "P=$(PREFIX),PORT=PluginInventory,ADDR=0,TIMEOUT=1")
+NDPluginInventoryConfigure("PINV1", "$(PREFIX)Plugins_RBV")
+dbLoadRecords("NDPluginInventory.template", "P=$(PREFIX),PORT=PINV1,ADDR=0,TIMEOUT=1")
 
 # Load NDPluginPva plugin
 NDPvaConfigure("PVA1", $(QSIZE), 0, "$(PORT)", 0, $(PREFIX)Pva1:Image, 0, 0, 0)
