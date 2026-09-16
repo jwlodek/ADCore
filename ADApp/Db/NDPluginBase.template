@@ -18,10 +18,10 @@ record(stringin, "$(P)$(R)PluginType_RBV")
    field(SCAN, "I/O Intr")
 }
 
-####################################################################
+###################################################################
 #  This plugin's EPICS record prefix $(P)$(R), pushed into the     #
 #  driver at init so it can be advertised in the plugin inventory. #
-####################################################################
+###################################################################
 record(stringout, "$(P)$(R)PvPrefix")
 {
    field(PINI, "YES")

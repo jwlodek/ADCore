@@ -53,7 +53,7 @@ class sortedListElement {
 #define NDPluginDriverMinCallbackTimeString     "MIN_CALLBACK_TIME"     /**< (asynFloat64,  r/w) Minimum time between calling processCallbacks
                                                                          *to execute plugin code */
 #define NDPluginDriverMaxByteRateString         "MAX_BYTE_RATE"         /**< (asynFloat64,  r/w) Limit on byte rate output of plugin */
-#define NDPluginDriverPvPrefixString            "PLUGIN_PV_PREFIX"      /**< (asynOctet,    r/o) This plugin's EPICS record prefix $(P)$(R) */
+#define NDPluginDriverPvPrefixString            "PLUGIN_PV_PREFIX"      /**< (asynOctet,    r/w) This plugin's EPICS record prefix $(P)$(R) */
 /** Class from which actual plugin drivers are derived; derived from asynNDArrayDriver */
 class NDPLUGIN_API NDPluginDriver : public asynNDArrayDriver, public epicsThreadRunable {
 public:

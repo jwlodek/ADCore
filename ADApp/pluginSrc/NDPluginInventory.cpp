@@ -171,6 +171,8 @@ Inventory getInventory()
 
 } // namespace NDPluginInventory
 
+namespace {
+
 #if defined(WITH_PVA) && !defined(WITH_PVXS)
 
 class InventoryRecord;
@@ -208,6 +210,12 @@ public:
 #if defined(WITH_PVXS)
         pv_ = pvxs::server::SharedPV::buildReadonly();
         added_ = false;
+#elif defined(WITH_PVA)
+        // Register the pvDatabase "local" provider now, at config time, so the PVA
+        // server includes it when it reads EPICS_PVAS_PROVIDER_NAMES during iocInit.
+        // Without this the provider is first created at publish() (after iocInit) and
+        // the server never serves the inventory channel.
+        epics::pvDatabase::getChannelProviderLocal();
 #endif
         theInstance_ = this;
         initHookRegister(&PluginInventory::initHook);
